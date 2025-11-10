@@ -40,9 +40,6 @@ module.exports = grammar({
       $.symbol
     ),
 
-    // Symbols = bare identifiers (exclude whitespace, parens, quotes, semicolon)
-    symbol: _ => /[^()\s";][^()\s";]*/,
-
     // Variables start with $
     variable: _ => /\$[^()\s";]+/,
 
@@ -65,6 +62,9 @@ module.exports = grammar({
       )),
       '"'
     )),
+
+    // Symbols = bare identifiers (exclude whitespace, parens, quotes, semicolon)
+    symbol: _ => /[^()\s";][^()\s";]*/,
 
     // ; comment to EOL
     comment: _ => token(seq(';', /[^\n\r]*/))

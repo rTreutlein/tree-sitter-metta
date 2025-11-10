@@ -30,11 +30,3 @@
 ; Example: treat boolean-like symbols specially when they appear anywhere
 ((symbol) @boolean
   (#any-of? @boolean "True" "False"))
-
-; Strings inside lists can be parameters/args (optional, aesthetic choice)
-; string in head position
-(list
-  head: (atom (string) @string.special))
-; string in any argument position
-(list
-  argument: (atom (string) @string.special))
