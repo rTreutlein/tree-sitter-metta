@@ -25,7 +25,7 @@
 ; You can give '=' operator scope as well:
 (list
   head: (atom (symbol) @operator)
-  (#eq? @operator "=" "+" "==" "-" "*" "/"))
+  (#any-of? @operator "=" "+" "==" "-" "*" "/"))
 
 ; Example: treat boolean-like symbols specially when they appear anywhere
 ((symbol) @boolean
